@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 250">
+    <defs>
+      <linearGradient id="glass-11" x1="0" x2="1">
+        <stop stop-color="#311c08"/>
+        <stop offset=".25" stop-color="#705023"/>
+        <stop offset=".5" stop-color="#84652b"/>
+        <stop offset=".8" stop-color="#34270e"/>
+        <stop offset="1" stop-color="#201807"/>
+      </linearGradient>
+      <linearGradient id="shine-11">
+        <stop stop-color="#ffffff" stop-opacity=".26"/>
+        <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path d="M45 13 Q60 9 75 13 L77 65 Q78 76 87 92 Q97 102 97 119 L97 226 Q97 241 83 244 L37 244 Q23 241 23 226 L23 119 Q23 102 33 92 Q42 76 43 65Z" fill="url(#glass-11)"/>
+    <rect x="43" y="7" width="34" height="13" rx="3" fill="#78350f"/>
+    <path d="M48 27 L53 27 L49 84 L36 114 L36 224 Q30 224 30 213 L30 119 L43 87Z" fill="url(#shine-11)"/>
+    <rect x="26" y="121" width="68" height="79" rx="5" fill="#fef3c7"/>
+    <rect x="29" y="125" width="62" height="71" rx="4" fill="none" stroke="#78350f" stroke-width="2"/>
+    <circle cx="60" cy="145" r="11" fill="#78350f"/>
+    <path d="M53 149 L56 139 L60 143 L64 139 L67 149Z" fill="#fef3c7"/>
+    <text x="60" y="171" text-anchor="middle" fill="#451a03" font-family="Georgia,serif" font-size="13" font-weight="bold">MALTIN</text>
+    <text x="60" y="185" text-anchor="middle" fill="#451a03" font-family="sans-serif" font-size="5.5" letter-spacing="0.8">POWER · 330 ML</text>
+    <path d="M46 31 H74 V56 H46Z" fill="#fef3c7" opacity=".9"/>
+    <path d="M52 43 H68" stroke="#78350f" stroke-width="3"/>
+  </svg>

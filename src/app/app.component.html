@@ -1,0 +1,20 @@
+<aside class="sidebar">
+  <a class="brand" routerLink="/"><img src="icons/icon-96x96.png" alt="" width="42" height="42"><span>Backus<small>VENTAS PWA</small></span></a>
+  <div class="nav-caption">ESPACIO DE VENTAS</div>
+  <nav aria-label="Navegación principal">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><span class="nav-icon">▦</span> Catálogo</a>
+    <a routerLink="/pedidos" routerLinkActive="active"><span class="nav-icon">▤</span> Mis pedidos <b>{{v.pedidos().length}}</b></a>
+    <a routerLink="/mensajes" routerLinkActive="active"><span class="nav-icon">✉</span> Mensajes <b>{{v.mensajes().length}}</b></a>
+  </nav>
+  <div class="sidebar-bottom"><div class="local-icon">✓</div><strong>Tu trabajo va contigo</strong><p>Pedidos y mensajes guardados en este dispositivo.</p><span>CASO ACADÉMICO · SENATI</span></div>
+</aside>
+<div class="workspace">
+  <header class="topbar"><span>Portal del vendedor <span class="muted">/ Backus Ventas</span></span><div class="header-actions"><span class="status" [class.offline]="!v.online()" role="status"><i></i>{{v.online() ? 'Conectado' : 'Sin conexión'}}</span>@if(v.install()){<button class="install" (click)="v.instalar()">↓ Instalar app</button>}@if(v.instalada()){<span class="muted">App instalada</span>}</div></header>
+  <main>
+    @if(!v.online()){<div class="offline-banner">Sin conexión. Puedes registrar pedidos y mensajes; se guardarán en este dispositivo.</div>}
+    @if(v.error()){<div class="alert" role="alert">{{v.error()}}<button (click)="v.error.set('')" aria-label="Cerrar error">×</button></div>}
+    <router-outlet />
+    <footer>Backus Ventas PWA <span>Productos y precios ficticios para uso educativo.</span></footer>
+  </main>
+</div>
+@if(v.aviso()){<div class="toast" role="status">{{v.aviso()}}<button (click)="v.aviso.set('')" aria-label="Cerrar notificación">×</button></div>}
