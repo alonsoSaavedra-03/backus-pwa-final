@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<style>
+  body {
+    margin: 0;
+    padding: 24px;
+    background: #1e1e1e;
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: #d4d4d4;
+  }
+  .window {
+    background: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+    border: 1px solid #333;
+    max-width: 900px;
+    margin: auto;
+  }
+  .titlebar {
+    background: #252526;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #2d2d2d;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .dot-red { background: #ff5f56; }
+  .dot-yellow { background: #ffbd2e; }
+  .dot-green { background: #27c93f; }
+  .tab {
+    background: #1e1e1e;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 4px 4px 0 0;
+    font-size: 13px;
+    margin-left: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 2px solid #007acc;
+  }
+  .tab-icon { color: #3178c6; font-weight: bold; }
+  pre {
+    margin: 0;
+    padding: 20px 24px;
+    font-size: 14.5px;
+    line-height: 1.6;
+    background: #1e1e1e;
+    overflow-x: auto;
+  }
+  .kw { color: #569cd6; font-weight: 600; }
+  .type { color: #4ec9b0; }
+  .prop { color: #9cdcfe; }
+  .str { color: #ce9178; }
+  .num { color: #b5cea8; }
+  .comment { color: #6a9955; font-style: italic; }
+  .line-num {
+    display: inline-block;
+    width: 32px;
+    color: #858585;
+    text-align: right;
+    margin-right: 18px;
+    user-select: none;
+  }
+</style>
+</head>
+<body>
+<div class="window">
+  <div class="titlebar">
+    <span class="dot dot-red"></span>
+    <span class="dot dot-yellow"></span>
+    <span class="dot dot-green"></span>
+    <div class="tab">
+      <span class="tab-icon">TS</span>
+      <span>models.ts — backus-ventas-pwa/src/app</span>
+    </div>
+  </div>
+  <pre><code><span class="line-num">1</span><span class="comment">// Modelo de datos oficial - Taller PWA Backus Ventas</span>
+<span class="line-num">2</span><span class="kw">export interface</span> <span class="type">Producto</span> {
+<span class="line-num">3</span>  <span class="prop">id</span>: <span class="type">number</span>;
+<span class="line-num">4</span>  <span class="prop">producto</span>: <span class="type">string</span>;
+<span class="line-num">5</span>  <span class="prop">categoria</span>: <span class="type">string</span>;
+<span class="line-num">6</span>  <span class="prop">precio</span>: <span class="type">number</span>;
+<span class="line-num">7</span>  <span class="prop">volumen</span>?: <span class="type">string</span>;
+<span class="line-num">8</span>}
+<span class="line-num">9</span>
+<span class="line-num">10</span><span class="kw">export interface</span> <span class="type">LineaPedido</span> {
+<span class="line-num">11</span>  <span class="prop">productoId</span>: <span class="type">number</span>;
+<span class="line-num">12</span>  <span class="prop">producto</span>: <span class="type">string</span>;
+<span class="line-num">13</span>  <span class="prop">precioUnitario</span>: <span class="type">number</span>;
+<span class="line-num">14</span>  <span class="prop">cantidad</span>: <span class="type">number</span>;
+<span class="line-num">15</span>  <span class="prop">subtotal</span>: <span class="type">number</span>; <span class="comment">// precioUnitario × cantidad</span>
+<span class="line-num">16</span>}
+<span class="line-num">17</span>
+<span class="line-num">18</span><span class="kw">export type</span> <span class="type">EstadoPedido</span> = <span class="str">'PENDIENTE'</span> | <span class="str">'SINCRONIZADO'</span> | <span class="str">'ERROR'</span>;
+<span class="line-num">19</span>
+<span class="line-num">20</span><span class="kw">export interface</span> <span class="type">Pedido</span> {
+<span class="line-num">21</span>  <span class="prop">id</span>?: <span class="type">number</span>;
+<span class="line-num">22</span>  <span class="prop">fecha</span>: <span class="type">string</span>;
+<span class="line-num">23</span>  <span class="prop">lineas</span>: <span class="type">LineaPedido</span>[];
+<span class="line-num">24</span>  <span class="prop">total</span>: <span class="type">number</span>;
+<span class="line-num">25</span>  <span class="prop">estado</span>: <span class="type">EstadoPedido</span>;
+<span class="line-num">26</span>  <span class="prop">origen</span>: <span class="str">'ONLINE'</span> | <span class="str">'OFFLINE'</span>;
+<span class="line-num">27</span>  <span class="prop">cliente</span>?: <span class="type">string</span>;
+<span class="line-num">28</span>  <span class="prop">notas</span>?: <span class="type">string</span>;
+<span class="line-num">29</span>}</code></pre>
+</div>
+</body>
+</html>
